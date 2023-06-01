@@ -1,5 +1,5 @@
-import SignInPage from "../PageObjects/SignInPage";
-import SignInSelectors from "../support/Selectors/SignInSelectors";
+import SignInPage from "../../PageObjects/SignInPage";
+import SignInSelectors from "../../support/Selectors/SignInSelectors";
 //import selectors from "../../support/selectors";
 
 
