@@ -28,9 +28,6 @@ Cypress.Commands.add('clickonLink', (label) => {
 
 })
 
-Cypress.Commands.add('verifyLabel', (attribute, label) => {
-  cy.contains(attribute, label).should("be.visible")
-})
 
 //custom commands for clicking on elements by selector
 Cypress.Commands.add('clickOnElementBySelector', (selector) => {
@@ -71,9 +68,8 @@ Cypress.Commands.add('verifyAndClickImage', (imageSelector, altText) => {
   cy.get(imageSelector).should('have.attr', 'alt', altText).click()
 })
 
-Cypress.Commands.add('verifyAndClickImage', (imageSelector) => {
-  //cy.get(imageSelector).should('have.attr', 'alt', altText).click()
-  cy.contains('img', imageSelector).should("be.visible").click()
+Cypress.Commands.add('verifyImage', (label, srcUrl) => {
+  cy.get(label).should('have.attr', 'src', srcUrl)
 })
 
 Cypress.Commands.add('verifyAndClickImageByIndex', (imageSelector, index) => {
@@ -271,6 +267,10 @@ Cypress.Commands.add('verifyLabel', (attribute, label) => {
   cy.contains(attribute, label).should("be.visible")
 })
 
+Cypress.Commands.add('verifyNavigationBar', (label) => {
+  cy.get(label).should("be.visible")
+})
+
 //custom command to enter value in text field
 Cypress.Commands.add('enterText', (selector, text) => {
   cy.get(selector).type(text)
@@ -332,7 +332,7 @@ Cypress.Commands.add('verifyTopicsAndScroll', (label) => {
 
 
 Cypress.Commands.add('verifyTopics', (label) => {
-  cy.contains(label).should('be.visible');
+  cy.contains(label).wait(1000).should('be.visible');
 
 })
 

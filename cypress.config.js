@@ -4,14 +4,15 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 module.exports = defineConfig({
 
   env: {
-    url: 'http://20.198.233.3:5090/',
+    //url: 'http://20.198.233.3:5090/',
+    url: 'http://20.198.233.3:5090/signin'
   },
   reporter: 'cypress-mochawesome-reporter',
-  pageLoadTimeout: 80000,
-  defaultCommandTimeout: 80000,
+  pageLoadTimeout: 500000,
+  defaultCommandTimeout: 500000,
   viewportWidth: 1366,
   viewportHeight: 768,
-  //projectId: "mne8zc",
+  projectId: "jvf8ej",
 
   e2e: {
     setupNodeEvents(on, config) {

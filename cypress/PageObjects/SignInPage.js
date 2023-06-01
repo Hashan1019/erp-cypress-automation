@@ -1,10 +1,9 @@
 
 class SignInPage {
     
-    verifyORGHRMLogo() {
-        cy.get('.orangehrm-login-branding > img')
-        .should('have.attr', 'src', '/web/images/ohrm_branding.png?1672659722816')
-        .should('have.attr', 'alt', 'company-branding')
+    verifyAgrixLogo() {
+        cy.get('.MuiAvatar-img')
+        .should('have.attr', 'src', 'http://20.198.233.3:5090/static/images/products/AgriGEN.png')
         .should('be.visible')
 
     }
