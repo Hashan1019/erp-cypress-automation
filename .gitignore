@@ -1,5 +1,5 @@
 allure-results/*
-allure-reports/*
+allure-report/*
 node_modules/*
 cypress/reports/*
 cypress/videos/*

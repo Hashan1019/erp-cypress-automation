@@ -1,4 +1,8 @@
 import SignInPage from "../PageObjects/SignInPage";
+import SignInSelectors from "../support/Selectors/SignInSelectors";
+//import selectors from "../../support/selectors";
+
+
 
 describe('ERP - SignInPageTestAutomation', () => {
 
@@ -17,19 +21,22 @@ describe('ERP - SignInPageTestAutomation', () => {
             return false
         })
 
-
         const signin = new SignInPage();
         cy.verifyTopics('Sign in');
 
-        //invalid login
+        //Invalid login
         cy.login('invalidLogin');
         cy.clickOnButton('Sign in now');
         cy.verifyTextErrorMessage('.MuiAlert-message', 'Invalid username or password');
         cy.reload()
 
-        //valid login
+        //Valid login
         cy.login('validLogin');
         cy.clickOnButton('Sign in now');
+
+        //Verify HomePage
+        cy.verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc);
+        cy.verifyNavigationBar('.MuiToolbar-root');
 
     })
 
