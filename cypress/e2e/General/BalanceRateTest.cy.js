@@ -3,7 +3,7 @@ import AdvanceRateSelectors from "../../support/selectors/AdvanceRateSelectors";
 import GeneralPO from "../../PageObjects/GeneralPO";
 
 
-describe('ERP - AdvanceRatePageTestAutomation', () => {
+describe('ERP - BalanceRatePageTestAutomation', () => {
 
     before(() => {
         cy.on('uncaught:exception', (err, runnable) => {
@@ -17,11 +17,11 @@ describe('ERP - AdvanceRatePageTestAutomation', () => {
         cy.clickOnButton('Sign in now');
         cy.verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc);
         cy.clickLink("General");
-        cy.clickLink("Advance Rate");
+        cy.clickLink("Balance Rate");
 
     })
 
-    it('AdvanceRatePageTest', () => {
+    it('BalanceRatePageTest', () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false
         })
