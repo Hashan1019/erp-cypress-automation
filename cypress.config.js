@@ -8,8 +8,8 @@ module.exports = defineConfig({
     url: 'http://20.198.233.3:5090/signin'
   },
   reporter: 'cypress-mochawesome-reporter',
-  pageLoadTimeout: 500000,
-  defaultCommandTimeout: 500000,
+  pageLoadTimeout: 80000,
+  defaultCommandTimeout: 80000,
   viewportWidth: 1366,
   viewportHeight: 768,
   projectId: "jvf8ej",
