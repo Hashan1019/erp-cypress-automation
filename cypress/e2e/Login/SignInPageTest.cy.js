@@ -1,4 +1,3 @@
-import SignInPage from "../../PageObjects/SignInPage";
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
 //import selectors from "../../support/selectors";
 
@@ -21,7 +20,6 @@ describe('ERP - SignInPageTestAutomation', () => {
             return false
         })
 
-        const signin = new SignInPage();
         cy.verifyTopics('Sign in');
 
         //Invalid login
