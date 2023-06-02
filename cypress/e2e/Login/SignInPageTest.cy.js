@@ -1,7 +1,4 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
-//import selectors from "../../support/selectors";
-
-
 
 describe('ERP - SignInPageTestAutomation', () => {
 
