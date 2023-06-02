@@ -35,4 +35,15 @@ describe('ERP - SignInPageTestAutomation', () => {
 
     })
 
+    after(() => {
+        cy.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
+
+        cy.clickLink("General");
+        cy.clickLink("Advance Rate");
+
+    })
+
+
 })
