@@ -16,6 +16,8 @@ describe('ERP - AdvanceRatePageTestAutomation', () => {
         cy.login('validLogin');
         cy.clickOnButton('Sign in now');
         cy.verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc);
+        cy.clickLink("General");
+        cy.clickLink("Advance Rate");
 
     })
 
@@ -23,8 +25,7 @@ describe('ERP - AdvanceRatePageTestAutomation', () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false
         })
-        cy.clickLink("General");
-        cy.clickLink("Advance Rate");
+        
         const adavnceRatePage = new AdvanceRatePage();
         adavnceRatePage.verifyGroupDropdownRandomSelect();
         adavnceRatePage.verifyFactoryDropdownRandomSelect();
