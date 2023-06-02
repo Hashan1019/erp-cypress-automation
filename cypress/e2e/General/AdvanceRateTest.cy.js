@@ -1,6 +1,6 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
 import AdvanceRateSelectors from "../../support/selectors/AdvanceRateSelectors";
-import AdvanceRatePage from "../../PageObjects/AdvanceRatePage";
+import GeneralPO from "../../PageObjects/GeneralPO";
 
 
 describe('ERP - AdvanceRatePageTestAutomation', () => {
@@ -26,11 +26,12 @@ describe('ERP - AdvanceRatePageTestAutomation', () => {
             return false
         })
         
-        const adavnceRatePage = new AdvanceRatePage();
-        adavnceRatePage.verifyGroupDropdownRandomSelect();
-        adavnceRatePage.verifyFactoryDropdownRandomSelect();
-        adavnceRatePage.verifyProductDropdownRandomSelect();
-        adavnceRatePage.verifyYearMonthRandomSelect();
+        const generalPO = new GeneralPO();
+        //Dropdown filters
+        generalPO.verifyGroupDropdownRandomSelect();
+        generalPO.verifyFactoryDropdownRandomSelect();
+        generalPO.verifyProductDropdownRandomSelect();
+        generalPO.verifyYearMonthRandomSelect();
     })
 
 })
