@@ -1,5 +1,5 @@
 import AdvanceRateSelectors from "../support/selectors/AdvanceRateSelectors";
-import advanceRateData from "../fixtures/advanceRateData.json";
+import advanceRateData from "../fixtures/advanceRateData";
 
 class CommonPO {
 
