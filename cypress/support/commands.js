@@ -215,12 +215,6 @@ Cypress.Commands.add('enterValue', (xpathSelector, enterText) => {
 
 })
 
-//coustom command to button click using xpath
-Cypress.Commands.add('clickOnButtonByXpath', (xpathSelector) => {
-  cy.xpath(xpathSelector).click();
-
-})
-
 //coustom command to clear text box value and enter using xpath
 Cypress.Commands.add('typeValue', (xpathSelectors, enterValue) => {
   cy.xpath(xpathSelectors).clear().type(enterValue).type('{enter}')
@@ -277,6 +271,11 @@ Cypress.Commands.add('enterText', (selector, text) => {
 
 })
 
+//custom command to enter value in text field using xpath
+Cypress.Commands.add('enterTextByXpath', (selector, text) => {
+  cy.xpath(selector).type(text)
+
+})
 Cypress.Commands.add('clickOnBreadcrumb', (label) => {
   cy.get('#category-menu').click({
     force: true,
@@ -329,7 +328,6 @@ Cypress.Commands.add('verifyTopicsAndScroll', (label) => {
     .wait(1000).scrollIntoView();
 
 })
-
 
 Cypress.Commands.add('verifyTopics', (label) => {
   cy.contains(label).wait(1000).should('be.visible');
