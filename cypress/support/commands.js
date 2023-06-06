@@ -351,7 +351,7 @@ Cypress.Commands.add('verifyImageByAlt', (imageSelector, altText) => {
 
 //custom command to click on button by xpath
 Cypress.Commands.add('clickOnButtonsByXpath', (xpathSelector) => {
-  cy.xpath(xpathSelector).click({force: true});
+  cy.xpath(xpathSelector).click({ force: true });
 
 })
 
@@ -487,4 +487,15 @@ Cypress.Commands.add('verifyUlInsideLi', (mainText, expectedUl, expectedList,) =
     });
 });
 
+Cypress.Commands.add('verifyMessage', (element, text) => {
+  cy.get(element)
+    .should('have.value', text)
+});
+
+
+Cypress.Commands.add('enterNumericInputField', (fixtureName, selector, fixtureData) => {
+  cy.fixture(fixtureName).then((data) => {
+    cy.xpath(selector).clear().type(data[fixtureData]);
+  });
+});
 

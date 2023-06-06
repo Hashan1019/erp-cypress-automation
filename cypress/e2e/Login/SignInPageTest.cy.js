@@ -8,8 +8,7 @@ describe('ERP - SignInPageTestAutomation', () => {
         })
 
         cy.visit(Cypress.env('url'));
-
-
+        
     })
 
     it('SignInPageTest', () => {

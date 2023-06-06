@@ -2,10 +2,10 @@ const { defineConfig } = require("cypress");
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
-
+  chromeWebSecurity: false,
   env: {
-    //url: 'http://20.198.233.3:5090/',
-    url: 'http://20.198.233.3:5090/signin'
+    url: 'http://20.198.233.3:5090/',
+    apidomain: 'http://20.198.233.3:6010'
   },
   reporter: 'cypress-mochawesome-reporter',
   pageLoadTimeout: 80000,
@@ -13,6 +13,7 @@ module.exports = defineConfig({
   viewportWidth: 1366,
   viewportHeight: 768,
   projectId: "jvf8ej",
+  abortOnAssertionFailure: false,
 
   e2e: {
     setupNodeEvents(on, config) {

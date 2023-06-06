@@ -1,0 +1,25 @@
+{
+  "groupNameAgrithmics1": "Agrithmics1",
+  "factoryNameAgrithmics1_1": "Agrithmics",
+  "factoryNameAgrithmics1_2": "Factory 01",
+  "factoryNameAgrithmics1_3": "Dalugala Factory",
+  "productName1": "Tea",
+  "groupNameEvergreen1": "Evergreen1",
+  "factoryEvergreen1_1": "Walahanduwa Tea Factory",
+  "factoryEvergreen1_2": "Walahanduwa API Intergration",
+
+  "monthNameJan": "Jan",
+  "monthNameFeb": "Feb",
+  "monthNameMarch": "Mar",
+  "monthNameApril": "Apr",
+
+  "year2020": 2020,
+  "year2021": 2021,
+  "year2022": 2022,
+  "year2023": 2023,
+
+  "superLeafMin": 200,
+  "superLeafMax": 300,
+  "normalLeafMin": 200,
+  "normalLeafMax": 250
+}
