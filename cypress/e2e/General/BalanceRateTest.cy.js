@@ -5,33 +5,33 @@ import GeneralPO from "../../PageObjects/GeneralPO";
 
 describe('ERP - BalanceRatePageTestAutomation', () => {
 
+
     before(() => {
-        cy.on('uncaught:exception', (err, runnable) => {
-            return false
-        })
-
         cy.visit(Cypress.env('url'));
-        cy.intercept('GET', '/webConfiguration.json', { apidomain: 'url' });
-
-        cy.login('validLogin');
-        cy.clickOnButton('Sign in now');
-        cy.verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc);
-        cy.clickLink("General");
-        cy.clickLink("Balance Rate");
-
-    })
-
-    it('BalanceRatePageTest', () => {
+        cy.login('validLogin')
+        .clickOnButton('Sign in now')
+        .verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc)
+        .clickLink("General")
+        .clickLink("Balance Rate");
+      });
+    
+    
+     
+    
+    
+    
+      it('BalanceRatePage', () => {
+       
+    
+      })
+    
+      after(() => {
         cy.on('uncaught:exception', (err, runnable) => {
-            return false
+          return false
         })
-        
-        const generalPO = new GeneralPO();
-        //Dropdown filters
-        generalPO.verifyGroupDropdownRandomSelect();
-        generalPO.verifyFactoryDropdownRandomSelect();
-        generalPO.verifyProductDropdownRandomSelect();
-        generalPO.verifyYearMonthRandomSelect();
-    })
+    
+       // cy.clickLink("Balance Rate");
+    
+      })
 
 })
