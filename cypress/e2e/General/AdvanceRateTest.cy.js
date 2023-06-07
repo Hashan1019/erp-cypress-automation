@@ -1,6 +1,7 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
 import AdvanceRateSelectors from "../../support/selectors/AdvanceRateSelectors";
 import CommonPO from "../../PageObjects/CommonPO";
+import AdvanceRatePage from "../../PageObjects/AdvanceRatePage";
 
 
 describe('ERP - AdvanceRatePageTestAutomation', () => {
@@ -23,20 +24,9 @@ describe('ERP - AdvanceRatePageTestAutomation', () => {
       return false
     })
 
-    const commonPO = new CommonPO();
-    //Dropdown filters
-    commonPO.verifyGroupDropdownSelect()
-    commonPO.verifyFactoryDropdownSelect()
-    commonPO.verifyProductDropdownSelect()
-    commonPO.verifyYearMonthSelect();
-
-    //Add SuperLeaf, NormalLeaf min max values
-    cy.enterNumericInputField('advanceRateData', AdvanceRateSelectors.textSuperLeafMinXpath, 'superLeafMin')
-      .enterNumericInputField('advanceRateData', AdvanceRateSelectors.textSuperLeafMaxXpath, 'superLeafMax')
-      .enterNumericInputField('advanceRateData', AdvanceRateSelectors.textNormalLeafMinXpath, 'normalLeafMin')
-      .enterNumericInputField('advanceRateData', AdvanceRateSelectors.textNormalLeafMaxXpath, 'normalLeafMax')
-      .wait(1000)
-      .clickOnButton('Save');
+    const advanceRatePage = new AdvanceRatePage()
+    advanceRatePage.addAdvanceRate();
+    //cy.clickOnButton('Save');
 
     //Success message popup
 
