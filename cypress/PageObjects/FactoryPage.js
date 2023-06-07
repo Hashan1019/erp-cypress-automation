@@ -5,19 +5,11 @@ import factoryData from "../fixtures/factoryData";
 
 class FactoryPage {
 
-  verifyGroupDropdownSelect() {
-    cy.get(FactorySelectors.drpFactory)
-      .click()
-      .get(AdvanceRateSelectors.dropdownMenuList)
-      .contains(factoryData.groupName_99)
-      .click();
-  }
-
-  addFacGeneralDetails() {
+  addFacGeneralDetails(opEntityType) {
     cy.get(FactorySelectors.drpOpEntityType)
       .click()
       .xpath(FactorySelectors.drpOpEntityTypeListXpath)
-      .contains(factoryData.opEntityType_2)
+      .contains(opEntityType)
       .click();
 
 
@@ -75,6 +67,7 @@ class FactoryPage {
       .click()
     //.clickOnButton('Add')
   }
+
 
 }
 export default FactoryPage;

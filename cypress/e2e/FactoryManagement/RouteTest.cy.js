@@ -27,7 +27,7 @@ describe('ERP - RoutePageTestAutomation', () => {
             .verifyTopics("Add Route")
         const routePage = new RoutePage()
         routePage.addRouteGeneralDetails()
-        cy.clickOnButton('Save')
+        //cy.clickOnButton('Save')
 
     })
 

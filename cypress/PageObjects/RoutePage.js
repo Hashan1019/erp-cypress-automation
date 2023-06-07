@@ -1,15 +1,14 @@
 import RouteSelectors from "../support/selectors/RouteSelectors";
 import CommonPO from "../PageObjects/CommonPO";
-
 import routeData from "../fixtures/routeData";
 
 class RoutePage {
 
     addRouteGeneralDetails() {
         const commonPO = new CommonPO()
-        commonPO.verifyAddGroupDropdownSelect()
-        commonPO.verifyAddFacDropdownSelect()
-        commonPO.verifyAddPordDropdownSelect()
+        commonPO.verifyAddGroupDropdownSelect(routeData.groupName_1)
+        commonPO.verifyAddFacDropdownSelect(routeData.facName_1)
+        commonPO.verifyAddPordDropdownSelect(routeData.prodName_Tea)
 
         cy.enterTextByXpath(RouteSelectors.txtRouteCodeXpath, routeData.routeCode)
             .enterTextByXpath(RouteSelectors.txtRouteNameXpath, routeData.routeName)

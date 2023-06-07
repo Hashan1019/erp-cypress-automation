@@ -1,10 +1,10 @@
 import GroupSelectors from "../support/selectors/GroupSelectors";
-import groupData from "../fixtures/groupData.json";
+import groupData from "../fixtures/groupData";
 
 class GroupPage {
-    addGroupDetails() {
-        cy.enterTextByXpath(GroupSelectors.textGroupCodeXpath, groupData.groupCode_E98)
-            .enterTextByXpath(GroupSelectors.textGroupNameXpath, groupData.groupName_E98)
+    addGroupDetails(groupCode, groupName) {
+        cy.enterTextByXpath(GroupSelectors.textGroupCodeXpath, groupCode)
+            .enterTextByXpath(GroupSelectors.textGroupNameXpath, groupName)
     }
 
 }
