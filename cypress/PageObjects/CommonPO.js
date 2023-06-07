@@ -1,12 +1,14 @@
 import AdvanceRateSelectors from "../support/selectors/AdvanceRateSelectors";
+import CommonSelectors from "../support/selectors/CommonSelectors";
 import advanceRateData from "../fixtures/advanceRateData";
+import routeData from "../fixtures/routeData";
 
 class CommonPO {
 
   verifyGroupDropdownSelect() {
     cy.get(AdvanceRateSelectors.groupDropdown)
       .click()
-      .get(AdvanceRateSelectors.dropdownMenuList)
+      .get(CommonSelectors.dropdownMenuList)
       .contains(advanceRateData.groupNameAgrithmics1)
       .click();
   }
@@ -14,7 +16,7 @@ class CommonPO {
   verifyFactoryDropdownSelect() {
     cy.get(AdvanceRateSelectors.factoryDropdown)
       .click()
-      .get(AdvanceRateSelectors.dropdownMenuList)
+      .get(CommonSelectors.dropdownMenuList)
       .contains(advanceRateData.factoryNameAgrithmics1_1)
       .click();
   }
@@ -22,7 +24,7 @@ class CommonPO {
   verifyProductDropdownSelect() {
     cy.get(AdvanceRateSelectors.productDropdown)
       .click()
-      .get(AdvanceRateSelectors.dropdownMenuList)
+      .get(CommonSelectors.dropdownMenuList)
       .contains(advanceRateData.productName1)
       .click();
   }
@@ -48,5 +50,30 @@ class CommonPO {
       .contains(advanceRateData.monthNameJan)
       .click();
   }
+
+  // Any Add section group, fac, prod drop down selection
+     verifyAddGroupDropdownSelect() {
+        cy.xpath(CommonSelectors.drpAddGroupXpath)
+            .click()
+            .get(CommonSelectors.dropdownMenuList)
+            .contains(routeData.groupName_1)
+            .click();
+    }
+
+    verifyAddFacDropdownSelect() {
+        cy.xpath(CommonSelectors.drpAddFacXpath)
+            .click()
+            .get(CommonSelectors.dropdownMenuList)
+            .contains(routeData.facName_1)
+            .click();
+    }
+
+    verifyAddPordDropdownSelect() {
+        cy.xpath(CommonSelectors.drpAddProdXpath)
+            .click()
+            .get(CommonSelectors.dropdownMenuList)
+            .contains(routeData.prodName_Tea)
+            .click();
+    }
 }
 export default CommonPO;

@@ -19,7 +19,7 @@ describe('ERP - GroupPageTestAutomation', () => {
       .clickLink("Group");
   });
 
-  it('GroupPageTest', () => {
+  it('Verify Add Group', () => {
     cy.on('uncaught:exception', (err, runnable) => {
       return false
     })
