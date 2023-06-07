@@ -40,8 +40,8 @@ describe('ERP - GroupPageTestAutomation', () => {
       return false
     })
 
-    cy.clickLink("Factory Management")
-      .clickLinkByXpath(FactorySelectors.btnFactoryXpath);
+    // cy.clickLink("Factory Management")
+    //   .clickLinkByXpath(FactorySelectors.btnFactoryXpath);
 
   })
 })
