@@ -55,5 +55,13 @@ class CommonPO {
       .click();
   }
 
+  verifyAddEstatedDropdownSelect(estateName) {
+    cy.xpath(CommonSelectors.drpAddEstateXpath)
+        .click()
+        .get(CommonSelectors.dropdownMenuList)
+        .contains(estateName)
+        .click();
+}
+
 }
 export default CommonPO;

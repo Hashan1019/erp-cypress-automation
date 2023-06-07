@@ -1,0 +1,20 @@
+{
+    "groupName_1": "Agrithmics Testing Group #",
+    "estateName_1": "Agrithmics Testing Factory #",
+    "prodName_Tea": "Tea",
+    "dvsnCode": "11",
+    "dvsnName": "Division Auto",
+    "dvsnLoc": "Dompe",
+    "trnsptRate": "10",
+    "trgtCropKG": "200",
+
+    "fldCode": "22",
+    "fldName": "Field Auto",
+    "fldLoc": "Gampaha",
+    "area": "Dompe",
+    "trNum": "30",
+    "mntlyTrgtCrpKG": "100"
+
+    
+
+}

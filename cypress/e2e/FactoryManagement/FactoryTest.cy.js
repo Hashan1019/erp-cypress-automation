@@ -3,6 +3,7 @@ import FactorySelectors from "../../support/selectors/FactorySelectors";
 import FactoryPage from "../../PageObjects/FactoryPage";
 import CommonPO from "../../PageObjects/CommonPO";
 import factoryData from "../../fixtures/factoryData";
+import CommonSelectors from "../../support/selectors/CommonSelectors";
 
 describe('ERP - FactoryPageTestAutomation', () => {
 
@@ -25,7 +26,7 @@ describe('ERP - FactoryPageTestAutomation', () => {
     })
 
     cy.verifyTopics("Operation Entity")
-      .clickOnButtonsByXpath(FactorySelectors.btnAddFacXpath)
+      .clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
     // const factoryPage = new FactoryPage();
     //factoryPage.verifyGroupDropdownSelect()
 
