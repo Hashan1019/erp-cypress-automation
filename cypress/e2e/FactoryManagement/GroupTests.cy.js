@@ -1,7 +1,7 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
 import GroupSelectors from "../../support/selectors/GroupSelectors";
+import FactorySelectors from "../../support/selectors/FactorySelectors";
 import GroupPage from "../../PageObjects/GroupPage";
-import groupData from "../../fixtures/groupData";
 
 
 describe('ERP - GroupPageTestAutomation', () => {
@@ -28,9 +28,9 @@ describe('ERP - GroupPageTestAutomation', () => {
       .clickOnButtonsByXpath(GroupSelectors.buttonAddGroupXpath)
 
       .verifyTopics("Add Group")
-      .enterTextByXpath(GroupSelectors.textGroupCode, groupData.groupCode)
-      .enterTextByXpath(GroupSelectors.textGroupName, groupData.groupName)
-      .clickOnButton('Save');
+    const groupPage = new GroupPage()
+    groupPage.addGroupDetails();
+    // cy.clickOnButton('Save');
 
   })
 
@@ -39,7 +39,8 @@ describe('ERP - GroupPageTestAutomation', () => {
       return false
     })
 
-    // cy.clickLink("Balance Rate");
+    cy.clickLink("Factory Management")
+      .clickLinkByXpath(FactorySelectors.btnFactoryXpath);
 
   })
 })

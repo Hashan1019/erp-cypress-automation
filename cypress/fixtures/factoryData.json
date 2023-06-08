@@ -1,0 +1,29 @@
+{
+    "groupName_99": "Agrithmics Testing Group #",
+    
+    "opEntityType_2": "Factory",
+    "opEntityCode_03": "03",
+    "opEntityName_03": "Agrithmics Automation Testing Group",
+    "brNum_03": "03",
+    "taxNum_03": 123456789,
+    "opEntMngrName_03": "Hashan Karunarathna",
+
+    "officePhone": "0760548096",
+    "officialEmail": "hashankarunarathna.96@gmail.com",
+    "faxNum": "123456789",
+    "billingEmail": "hashankarunarathna.96@gmail.com",
+
+    "city": "Dompe",
+    "address1": "No 74",
+    "address2": "Karunawasa",
+    "address3": "Ganegoda",
+    "zipCode": 11680,
+
+    "bankCommercial": "Commercial Bank PLC",
+    "branchKandyCommercial": "Kandy",
+    "accountNo": "1234567890",
+    "accountName": "Test Account",
+    
+    "prodTypeOnion": "Onion",
+    "collectionType": "Onion Type 2"
+}
