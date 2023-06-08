@@ -25,9 +25,12 @@ export default {
     drpFltrGroupXpath: "//div[@id='mui-component-select-groupID' and @role='button']",
     drpFltrGroupList: "//div[@class='MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation8 MuiPaper-rounded']",
 
-    //estate dropdowns xpaths
-    drpAddRoleXpath: "//div[@id='roleLevelID' and @role='button']",
+    //role level dropdowns xpaths
+    drpAddRoleLevelXpath: "//div[@id='roleLevelID' and @role='button']",
     drpAddRoleListXpath: "",
-    
+
+
+    //role type dropdowns xpaths
+    drpAddRoleTypeXpath: "//div[@id='roleID' and @role='button']"
 
 };
