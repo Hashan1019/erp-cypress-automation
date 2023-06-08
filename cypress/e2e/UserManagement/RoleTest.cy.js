@@ -1,10 +1,9 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
-import RouteSelectors from "../../support/selectors/RouteSelectors";
+import RoleSelectors from "../../support/selectors/RoleSelectors";
 import CommonSelectors from "../../support/selectors/CommonSelectors";
-import RoutePage from "../../PageObjects/RoutePage";
+import RolePage from "../../PageObjects/RolePage";
 
-describe('ERP - RoutePageTestAutomation', () => {
-
+describe('ERP - RolePageTestAutomation', () => {
 
     before(() => {
         cy.on('uncaught:exception', (err, runnable) => {
@@ -15,19 +14,19 @@ describe('ERP - RoutePageTestAutomation', () => {
             .login('validLogin')
             .clickOnButton('Sign in now')
             .verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc)
-            .clickLink("Factory Management")
-            .clickLinkByXpath(RouteSelectors.btnNavRouteXpath);
+            .clickLink("User Management")
+            .clickLinkByXpath(RoleSelectors.btnNavRoleXpath);
     });
 
-    it('Verify Add Route', () => {
+    it('Verify Add Role - Level 1', () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false
         })
 
         cy.clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
-            .verifyTopics("Add Route")
-        const routePage = new RoutePage()
-        routePage.addRGeneralDetails()
+            .verifyTopics("Add Role")
+        const rolePage = new RolePage()
+        rolePage.addRoleGeneralDetails()
         //cy.clickOnButton('Save')
 
     })

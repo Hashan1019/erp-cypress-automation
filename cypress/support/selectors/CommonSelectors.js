@@ -9,7 +9,7 @@ export default {
     //group dwopdowns xpaths
     drpAddGroupXpath: "//div[@id='groupID' and @role='button']",
     drpAddGroupListXpath: "",
-    
+
     //fac dropdowns xpaths
     drpAddFacXpath: "//div[@id='factoryID' and @role='button']",
     drpAddFacListXpath: "",
@@ -23,6 +23,11 @@ export default {
     drpAddEstateListXpath: "",
 
     drpFltrGroupXpath: "//div[@id='mui-component-select-groupID' and @role='button']",
-    drpFltrGroupList: "//div[@class='MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation8 MuiPaper-rounded']"
+    drpFltrGroupList: "//div[@class='MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation8 MuiPaper-rounded']",
+
+    //estate dropdowns xpaths
+    drpAddRoleXpath: "//div[@id='roleLevelID' and @role='button']",
+    drpAddRoleListXpath: "",
+    
 
 };
