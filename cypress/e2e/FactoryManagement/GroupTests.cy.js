@@ -2,6 +2,7 @@ import SignInSelectors from "../../support/Selectors/SignInSelectors";
 import GroupSelectors from "../../support/selectors/GroupSelectors";
 import FactorySelectors from "../../support/selectors/FactorySelectors";
 import GroupPage from "../../PageObjects/GroupPage";
+import groupData from "../../fixtures/groupData";
 
 
 describe('ERP - GroupPageTestAutomation', () => {
@@ -29,7 +30,7 @@ describe('ERP - GroupPageTestAutomation', () => {
 
       .verifyTopics("Add Group")
     const groupPage = new GroupPage()
-    groupPage.addGroupDetails();
+    groupPage.addGroupDetails( groupData.groupCode_E98, groupData.groupName_E98);
     // cy.clickOnButton('Save');
 
   })

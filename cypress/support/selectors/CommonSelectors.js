@@ -13,5 +13,9 @@ export default {
 
     //product dropdowns xpaths
     drpAddProdXpath: "//div[@id='productID' and @role='button']",
-    drpAddProdListXpath: ""
+    drpAddProdListXpath: "",
+
+    drpFltrGroupXpath: "//div[@id='mui-component-select-groupID' and @role='button']",
+    drpFltrGroupList: "//div[@class='MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation8 MuiPaper-rounded']"
+
 };

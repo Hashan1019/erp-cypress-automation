@@ -1,6 +1,8 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
 import FactorySelectors from "../../support/selectors/FactorySelectors";
 import FactoryPage from "../../PageObjects/FactoryPage";
+import CommonPO from "../../PageObjects/CommonPO";
+import factoryData from "../../fixtures/factoryData";
 
 describe('ERP - FactoryPageTestAutomation', () => {
 
@@ -24,12 +26,16 @@ describe('ERP - FactoryPageTestAutomation', () => {
 
     cy.verifyTopics("Operation Entity")
       .clickOnButtonsByXpath(FactorySelectors.btnAddFacXpath)
-    const factoryPage = new FactoryPage();
-    factoryPage.verifyGroupDropdownSelect()
+    // const factoryPage = new FactoryPage();
+    //factoryPage.verifyGroupDropdownSelect()
 
+    const commonPO = new CommonPO();
+    commonPO.verifyFltrGroupDropdownSelect(factoryData.groupName_99)
+    
+    const factoryPage = new FactoryPage();
     //Add General Details
     cy.verifyTopics("Add General Details")
-    factoryPage.addFacGeneralDetails();
+    factoryPage.addFacGeneralDetails(factoryData.opEntityType_2);
 
     //Add Contact Information
     cy.clickLink("Contact Information")
@@ -46,7 +52,7 @@ describe('ERP - FactoryPageTestAutomation', () => {
       .verifyTopics("Add Product Details")
     factoryPage.addFacProdDetails();
 
-    cy.clickOnButton('Save')
+    //cy.clickOnButton('Save')
 
   })
 

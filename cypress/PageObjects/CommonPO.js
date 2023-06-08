@@ -3,40 +3,44 @@ import CommonSelectors from "../support/selectors/CommonSelectors";
 import advanceRateData from "../fixtures/advanceRateData";
 import routeData from "../fixtures/routeData";
 
+
 class CommonPO {
 
-  verifyGroupDropdownSelect() {
-    cy.get(AdvanceRateSelectors.groupDropdown)
+  verifyFltrGroupDropdownSelect(groupName) {
+    cy.xpath(CommonSelectors.drpFltrGroupXpath)
       .click()
-      .get(CommonSelectors.dropdownMenuList)
-      .contains(advanceRateData.groupNameAgrithmics1)
+      .xpath(CommonSelectors.drpFltrGroupList)
+      .contains(groupName)
       .click();
   }
 
-  verifyFactoryDropdownSelect() {
-    cy.get(AdvanceRateSelectors.factoryDropdown)
-      .click()
-      .get(CommonSelectors.dropdownMenuList)
-      .contains(advanceRateData.factoryNameAgrithmics1_1)
-      .click();
-  }
 
-  verifyProductDropdownSelect() {
-    cy.get(AdvanceRateSelectors.productDropdown)
-      .click()
-      .get(CommonSelectors.dropdownMenuList)
-      .contains(advanceRateData.productName1)
-      .click();
-  }
+  // Any Add section group, fac, prod drop down selection
+     verifyAddGroupDropdownSelect(groupName) {
+        cy.xpath(CommonSelectors.drpAddGroupXpath)
+            .click()
+            .get(CommonSelectors.dropdownMenuList)
+            .contains(groupName)
+            .click();
+    }
 
-  verifyYearSelect() {
-    cy.xpath(AdvanceRateSelectors.yearName2023Xpath)
-      .click()
-      .xpath(AdvanceRateSelectors.yearName2023Xpath)
-      .contains(advanceRateData.year2020)
-      .click();
-  }
+    verifyAddFacDropdownSelect(facName) {
+        cy.xpath(CommonSelectors.drpAddFacXpath)
+            .click()
+            .get(CommonSelectors.dropdownMenuList)
+            .contains(facName)
+            .click();
+    }
 
+    verifyAddPordDropdownSelect(prodName) {
+        cy.xpath(CommonSelectors.drpAddProdXpath)
+            .click()
+            .get(CommonSelectors.dropdownMenuList)
+            .contains(prodName)
+            .click();
+    }
+
+    
   verifyYearMonthSelect() {
     cy.xpath(AdvanceRateSelectors.yearMonthPickerListXpath)
       .click()
@@ -51,29 +55,5 @@ class CommonPO {
       .click();
   }
 
-  // Any Add section group, fac, prod drop down selection
-     verifyAddGroupDropdownSelect() {
-        cy.xpath(CommonSelectors.drpAddGroupXpath)
-            .click()
-            .get(CommonSelectors.dropdownMenuList)
-            .contains(routeData.groupName_1)
-            .click();
-    }
-
-    verifyAddFacDropdownSelect() {
-        cy.xpath(CommonSelectors.drpAddFacXpath)
-            .click()
-            .get(CommonSelectors.dropdownMenuList)
-            .contains(routeData.facName_1)
-            .click();
-    }
-
-    verifyAddPordDropdownSelect() {
-        cy.xpath(CommonSelectors.drpAddProdXpath)
-            .click()
-            .get(CommonSelectors.dropdownMenuList)
-            .contains(routeData.prodName_Tea)
-            .click();
-    }
 }
 export default CommonPO;
