@@ -8,6 +8,11 @@ Cypress.Commands.add('clickLink', (label) => {
   cy.contains(label).click();
 })
 
+//custom command to click on links by xpath
+Cypress.Commands.add('clickLinkByXpath', (label) => {
+  cy.xpath(label).click();
+})
+
 //custom command to verify the links
 Cypress.Commands.add('verifyLink', (label) => {
   cy.contains(label).should("be.visible");;
