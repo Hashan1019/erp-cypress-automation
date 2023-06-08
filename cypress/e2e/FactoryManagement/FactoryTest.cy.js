@@ -17,7 +17,7 @@ describe('ERP - FactoryPageTestAutomation', () => {
       .clickLinkByXpath(FactorySelectors.btnFactoryXpath);
   });
 
-  it('FactoryPageTest', () => {
+  it('Verify Add Factory', () => {
     cy.on('uncaught:exception', (err, runnable) => {
       return false
     })
