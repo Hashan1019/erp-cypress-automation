@@ -1,9 +1,9 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
-import RouteSelectors from "../../support/selectors/RouteSelectors";
+import DivisionSelectors from "../../support/selectors/DivisionSelectors";
+import DivisionPage from "../../PageObjects/DivisionPage";
 import CommonSelectors from "../../support/selectors/CommonSelectors";
-import RoutePage from "../../PageObjects/RoutePage";
 
-describe('ERP - RoutePageTestAutomation', () => {
+describe('ERP - DivisionPageTestAutomation', () => {
 
 
     before(() => {
@@ -16,18 +16,18 @@ describe('ERP - RoutePageTestAutomation', () => {
             .clickOnButton('Sign in now')
             .verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc)
             .clickLink("Factory Management")
-            .clickLinkByXpath(RouteSelectors.btnNavRouteXpath);
+            .clickLinkByXpath(DivisionSelectors.btnNavDivisionXpath);
     });
 
-    it('Verify Add Route', () => {
+    it('Verify Add Division', () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false
         })
 
         cy.clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
-            .verifyTopics("Add Route")
-        const routePage = new RoutePage()
-        routePage.addRouteGeneralDetails()
+            .verifyTopics("Add Division")
+        const divisionPage = new DivisionPage()
+        divisionPage.addDivisionGeneralDetails()
         //cy.clickOnButton('Save')
 
     })
@@ -37,8 +37,7 @@ describe('ERP - RoutePageTestAutomation', () => {
             return false
         })
 
-        cy.clickLink("Factory Management")
-            .clickLinkByXpath(DivisionSelectors.btnNavDivisionXpath);
+        // cy.clickLink("Balance Rate");
 
     })
 })
