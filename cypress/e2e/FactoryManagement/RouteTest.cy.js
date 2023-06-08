@@ -2,6 +2,7 @@ import SignInSelectors from "../../support/Selectors/SignInSelectors";
 import RouteSelectors from "../../support/selectors/RouteSelectors";
 import CommonSelectors from "../../support/selectors/CommonSelectors";
 import RoutePage from "../../PageObjects/RoutePage";
+import SignInPage from "../../PageObjects/SignInPage";
 
 describe('ERP - RoutePageTestAutomation', () => {
 
@@ -12,23 +13,21 @@ describe('ERP - RoutePageTestAutomation', () => {
         })
 
         cy.visit(Cypress.env('url'))
-            .login('validLogin')
-            .clickOnButton('Sign in now')
-            .verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc)
-            .clickLink("Factory Management")
-            .clickLinkByXpath(RouteSelectors.btnNavRouteXpath);
+
+        const signInPage = new SignInPage()
+        signInPage.verifyValidLogin();
+
+        const routePage = new RoutePage()
+        routePage.verifyClickNavFMRoute()
     });
 
     it('Verify Add Route', () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false
         })
-
-        cy.clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
-            .verifyTopics("Add Route")
         const routePage = new RoutePage()
-        routePage.addRGeneralDetails()
-        //cy.clickOnButton('Save')
+        routePage.verifyAddRoute()
+
 
     })
 

@@ -1,11 +1,15 @@
-import AdvanceRateSelectors from "../support/selectors/AdvanceRateSelectors";
+import CommonSelectors from "../support/selectors/CommonSelectors";
 import FactorySelectors from "../support/selectors/FactorySelectors";
 import factoryData from "../fixtures/factoryData";
+import CommonPO from "../PageObjects/CommonPO";
 
 
 class FactoryPage {
 
   addFacGeneralDetails(opEntityType) {
+    cy.on('uncaught:exception', (err, runnable) => {
+      return false
+    })
     cy.get(FactorySelectors.drpOpEntityType)
       .click()
       .xpath(FactorySelectors.drpOpEntityTypeListXpath)
@@ -22,6 +26,9 @@ class FactoryPage {
   }
 
   addFacContactInfo() {
+    cy.on('uncaught:exception', (err, runnable) => {
+      return false
+    })
     //Contact Details
     cy.enterTextByXpath(FactorySelectors.txtOfficePhone, factoryData.officePhone)
       .enterTextByXpath(FactorySelectors.txtOfficialEmail, factoryData.officialEmail)
@@ -37,6 +44,9 @@ class FactoryPage {
   }
 
   addFacOpEntityAcc() {
+    cy.on('uncaught:exception', (err, runnable) => {
+      return false
+    })
     cy.get(FactorySelectors.drpComBankType)
       .click()
       .xpath(FactorySelectors.drpOpComBankTypeListXpath)
@@ -54,6 +64,9 @@ class FactoryPage {
   }
 
   addFacProdDetails() {
+    cy.on('uncaught:exception', (err, runnable) => {
+      return false
+    })
     cy.xpath(FactorySelectors.drpProdTypeXpath)
       .click()
       .xpath(FactorySelectors.drpProdTypeListXpath)
@@ -68,6 +81,47 @@ class FactoryPage {
     //.clickOnButton('Add')
   }
 
+  verifyClickNavFMFactory() {
+    cy.on('uncaught:exception', (err, runnable) => {
+      return false
+    })
+    cy.clickLink("Factory Management")
+      .clickLinkByXpath(FactorySelectors.btnFactoryXpath);
+  }
+
+  verifyAddFactory() {
+    cy.on('uncaught:exception', (err, runnable) => {
+      return false
+    })
+    cy.verifyTopics("Operation Entity")
+      .clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
+    // const factoryPage = new FactoryPage();
+    //factoryPage.verifyGroupDropdownSelect()
+
+    const commonPO = new CommonPO();
+    commonPO.verifyFltrGroupDropdownSelect(factoryData.groupName_99)
+
+    //Add General Details
+    cy.verifyTopics("Add General Details")
+    this.addFacGeneralDetails(factoryData.opEntityType_2);
+
+    //Add Contact Information
+    cy.clickLink("Contact Information")
+      .verifyTopics("Add Contact Information")
+    this.addFacContactInfo();
+
+    //Add Add Factory Accounts
+    cy.clickLink("Operation Entity Accounts")
+      .verifyTopics("Add Factory Accounts")
+    this.addFacOpEntityAcc();
+
+    //Add Add Product Details
+    cy.clickLink("Product Details")
+      .verifyTopics("Add Product Details")
+    this.addFacProdDetails();
+
+    //cy.clickOnButton('Save')
+  }
 
 }
 export default FactoryPage;

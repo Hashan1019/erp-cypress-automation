@@ -8,8 +8,8 @@ class UserPage {
     verifyAddRoleNameDropdownSelect(roleName) {
         cy.xpath(CommonSelectors.drpAddRoleTypeXpath)
             .click()
-           .get(CommonSelectors.dropdownMenuList)
-           .contains(roleName)
+            .get(CommonSelectors.dropdownMenuList)
+            .contains(roleName)
             .click();
     }
 
@@ -22,6 +22,21 @@ class UserPage {
         this.verifyAddRoleNameDropdownSelect(userData.roleName_1);
         cy.enterTextByXpath(UserSelectors.txtUserNameXpath, userData.userName)
             .enterTextByXpath(UserSelectors.txtPasswordXpath, userData.password)
+    }
+
+    verifyClickNavUMUser() {
+        cy.clickLink("User Management")
+            .clickLinkByXpath(UserSelectors.btnNavUserXpath);
+    }
+
+    verifyAddUser() {
+        cy.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
+        cy.clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
+            .verifyTopics("Add User")
+        this.addUserGeneralDetails()
+        //cy.clickOnButton('Save')
     }
 
 }

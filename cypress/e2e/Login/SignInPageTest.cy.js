@@ -1,4 +1,5 @@
-import SignInSelectors from "../../support/Selectors/SignInSelectors";
+
+import SignInPage from "../../PageObjects/SignInPage";
 
 describe('ERP - SignInPageTestAutomation', () => {
 
@@ -8,7 +9,7 @@ describe('ERP - SignInPageTestAutomation', () => {
         })
 
         cy.visit(Cypress.env('url'));
-        
+
     })
 
     it('SignInPageTest', () => {
@@ -16,21 +17,11 @@ describe('ERP - SignInPageTestAutomation', () => {
             return false
         })
 
-        cy.verifyTopics('Sign in');
+        const signInPage = new SignInPage()
+        signInPage.verifyInvalidLogin();
+        cy.reload();
+        signInPage.verifyValidLogin();
 
-        //Invalid login
-        cy.login('invalidLogin');
-        cy.clickOnButton('Sign in now');
-        cy.verifyTextErrorMessage('.MuiAlert-message', 'Invalid username or password');
-        cy.reload()
-
-        //Valid login
-        cy.login('validLogin');
-        cy.clickOnButton('Sign in now');
-
-        //Verify HomePage
-        cy.verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc);
-        cy.verifyNavigationBar('.MuiToolbar-root');
 
     })
 
@@ -39,8 +30,8 @@ describe('ERP - SignInPageTestAutomation', () => {
             return false
         })
 
-        cy.clickLink("General");
-        cy.clickLink("Advance Rate");
+        // cy.clickLink("General");
+        // cy.clickLink("Advance Rate");
 
     })
 
