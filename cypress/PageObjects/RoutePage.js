@@ -1,4 +1,5 @@
 import RouteSelectors from "../support/selectors/RouteSelectors";
+import CommonSelectors from "../support/selectors/CommonSelectors";
 import CommonPO from "../PageObjects/CommonPO";
 import routeData from "../fixtures/routeData";
 
@@ -15,8 +16,19 @@ class RoutePage {
             .enterTextByXpath(RouteSelectors.txtRouteLocXpath, routeData.routeLoc)
             .enterTextByXpath(RouteSelectors.txtMntlyTrgtCrpKGXpath, routeData.mntlyTrgtCrpKG)
             .enterTextByXpath(RouteSelectors.txtTrnsptRateXpath, routeData.trnsptRate)
-            .enterTextByXpath(RouteSelectors.txtExpayRateXpath, routeData.expayRate)            
+            .enterTextByXpath(RouteSelectors.txtExpayRateXpath, routeData.expayRate)
     }
 
+    verifyClickNavFMRoute() {
+        cy.clickLink("Factory Management")
+            .clickLinkByXpath(RouteSelectors.btnNavRouteXpath);
+    }
+
+    verifyAddRoute() {
+        cy.clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
+            .verifyTopics("Add Route")
+        this.addRouteGeneralDetails()
+        //cy.clickOnButton('Save')
+    }
 }
 export default RoutePage;

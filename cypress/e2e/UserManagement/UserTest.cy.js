@@ -1,6 +1,4 @@
-import SignInSelectors from "../../support/Selectors/SignInSelectors";
-import UserSelectors from "../../support/selectors/UserSelectors";
-import CommonSelectors from "../../support/selectors/CommonSelectors";
+import SignInPage from "../../PageObjects/SignInPage";
 import UserPage from "../../PageObjects/UserPage";
 
 describe('ERP - UserPageTestAutomation', () => {
@@ -11,11 +9,12 @@ describe('ERP - UserPageTestAutomation', () => {
         })
 
         cy.visit(Cypress.env('url'))
-            .login('validLogin')
-            .clickOnButton('Sign in now')
-            .verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc)
-            .clickLink("User Management")
-            .clickLinkByXpath(UserSelectors.btnNavUserXpath);
+        const signInPage = new SignInPage()
+        signInPage.verifyValidLogin();
+
+        const userPage = new UserPage()
+        userPage.verifyClickNavUMUser()
+
     });
 
     it('Verify Add User - Admin', () => {
@@ -23,11 +22,8 @@ describe('ERP - UserPageTestAutomation', () => {
             return false
         })
 
-        cy.clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
-            .verifyTopics("Add User")
         const userPage = new UserPage()
-        userPage.addUserGeneralDetails()
-        //cy.clickOnButton('Save')
+        userPage.verifyAddUser()
 
     })
 

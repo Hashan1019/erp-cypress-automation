@@ -1,7 +1,7 @@
-import SignInSelectors from "../../support/Selectors/SignInSelectors";
-import RoleSelectors from "../../support/selectors/RoleSelectors";
-import CommonSelectors from "../../support/selectors/CommonSelectors";
+import GroupPage from "../../PageObjects/GroupPage";
+import FactoryPage from "../../PageObjects/FactoryPage";
 import RolePage from "../../PageObjects/RolePage";
+import UserPage from "../../PageObjects/UserPage";
 import SignInPage from "../../PageObjects/SignInPage";
 
 describe('ERP - RolePageTestAutomation', () => {
@@ -12,21 +12,37 @@ describe('ERP - RolePageTestAutomation', () => {
         })
 
         cy.visit(Cypress.env('url'))
+
         const signInPage = new SignInPage()
         signInPage.verifyValidLogin();
-    
-        const rolePage = new RolePage()
-        rolePage.verifyClickNavUMRole()
+
+        const groupPage = new GroupPage()
+        groupPage.verifyClickNavFMGroup()
     });
 
-    it('Verify Add Role - Level 1', () => {
+    it('Should verify Group Factory Role User creation', () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false
         })
 
+        //Add group
+        const groupPage = new GroupPage()
+        groupPage.verifyAddGroup()
+
+        //Add factory
+        const factoryPage = new FactoryPage()
+        factoryPage.verifyClickNavFMFactory()
+        factoryPage.verifyAddFactory()
+
+        //Add role
         const rolePage = new RolePage()
+        rolePage.verifyClickNavUMRole()
         rolePage.verifyAddRole()
 
+        //Add user
+        const userPage = new UserPage()
+        userPage.verifyClickNavUMUser()
+        userPage.verifyAddUser()
     })
 
     after(() => {
