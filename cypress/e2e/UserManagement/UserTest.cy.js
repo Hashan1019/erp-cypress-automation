@@ -1,9 +1,9 @@
 import SignInSelectors from "../../support/Selectors/SignInSelectors";
-import RoleSelectors from "../../support/selectors/RoleSelectors";
+import UserSelectors from "../../support/selectors/UserSelectors";
 import CommonSelectors from "../../support/selectors/CommonSelectors";
-import RolePage from "../../PageObjects/RolePage";
+import UserPage from "../../PageObjects/UserPage";
 
-describe('ERP - RolePageTestAutomation', () => {
+describe('ERP - UserPageTestAutomation', () => {
 
     before(() => {
         cy.on('uncaught:exception', (err, runnable) => {
@@ -15,19 +15,19 @@ describe('ERP - RolePageTestAutomation', () => {
             .clickOnButton('Sign in now')
             .verifyImage(SignInSelectors.imageAgrixLogoClassName, SignInSelectors.imageAgrixLogoSrc)
             .clickLink("User Management")
-            .clickLinkByXpath(RoleSelectors.btnNavRoleXpath);
+            .clickLinkByXpath(UserSelectors.btnNavUserXpath);
     });
 
-    it('Verify Add Role - Level 1', () => {
+    it('Verify Add User - Admin', () => {
         cy.on('uncaught:exception', (err, runnable) => {
             return false
         })
 
         cy.clickOnButtonsByXpath(CommonSelectors.btnAddXpath)
-            .verifyTopics("Add Role")
-        const rolePage = new RolePage()
-        rolePage.addRoleGeneralDetails()
-       // cy.clickOnButton('Save')
+            .verifyTopics("Add User")
+        const userPage = new UserPage()
+        userPage.addUserGeneralDetails()
+        //cy.clickOnButton('Save')
 
     })
 
