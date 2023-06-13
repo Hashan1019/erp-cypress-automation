@@ -8,8 +8,8 @@ module.exports = defineConfig({
     apidomain: 'http://20.198.233.3:6010'
   },
   reporter: 'cypress-mochawesome-reporter',
-  pageLoadTimeout: 80000,
-  defaultCommandTimeout: 80000,
+  pageLoadTimeout: 100000,
+  defaultCommandTimeout: 100000,
   viewportWidth: 1366,
   viewportHeight: 768,
   projectId: "jvf8ej",

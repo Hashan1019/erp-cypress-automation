@@ -4,7 +4,7 @@ import RolePage from "../../PageObjects/RolePage";
 import UserPage from "../../PageObjects/UserPage";
 import SignInPage from "../../PageObjects/SignInPage";
 
-describe('ERP - RolePageTestAutomation', () => {
+describe('ERP - Group-Factory-Role-User Test Automation', () => {
 
     before(() => {
         cy.on('uncaught:exception', (err, runnable) => {

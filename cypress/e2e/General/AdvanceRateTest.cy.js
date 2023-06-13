@@ -19,14 +19,14 @@ describe('ERP - AdvanceRatePageTestAutomation', () => {
       .clickLink("Advance Rate");
   });
 
-  it('AdvanceRatePageest', () => {
+  it('AdvanceRatePageTest', () => {
     cy.on('uncaught:exception', (err, runnable) => {
       return false
     })
 
     const advanceRatePage = new AdvanceRatePage()
     advanceRatePage.addAdvanceRate();
-    //cy.clickOnButton('Save');
+    
 
     //Success message popup
 
