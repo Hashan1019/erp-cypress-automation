@@ -1,0 +1,13 @@
+npm verb cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+npm info using npm@9.5.1
+npm info using node@v18.16.0
+npm verb title npm install
+npm verb argv "install" "--legacy-peer-deps" "--loglevel" "verbose"
+npm verb logfile logs-max:10 dir:C:\Users\HashanKarunarathna\AppData\Local\npm-cache\_logs\2023-06-20T06_23_02_051Z-
+npm verb logfile C:\Users\HashanKarunarathna\AppData\Local\npm-cache\_logs\2023-06-20T06_23_02_051Z-debug-0.log
+
+up to date, audited 1 package in 128ms
+
+found 0 vulnerabilities
+npm verb exit 0
+npm info ok 
